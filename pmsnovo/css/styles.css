@@ -1,0 +1,33 @@
+.google-map{
+	height: 250px;
+	width: 100%;
+}
+
+#contact{
+	padding-top: 2.5%;
+	padding-bottom:0%;
+}
+
+#mainNav{
+	background-color: white !important;
+}
+
+#footer_left_content{
+	padding-left: 2.5%;
+}
+
+.navLink a {
+	color: black !important;
+}
+
+
+.footer{
+	background-color: #114065;
+	font-family: 'Roboto', sans-serif;
+}
+
+#secretarias{
+	color: #114065; 
+	font-family: 'Roboto', sans-serif;
+	margin: 25px 0px 0px 10px;
+}
