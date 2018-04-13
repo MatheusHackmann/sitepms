@@ -24,13 +24,13 @@ hr.light {
 
 a {
   color: #fff;
- 
+
   font-family: 'Roboto', sans-serif;
 
 }
 
 a:hover {
-  color: #1D72B3;
+  color: #149dcc;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
 }
@@ -376,8 +376,18 @@ header.masthead p {
   text-align: left;
 }
 .sectionServicosNoticias p {
-  color: #767676;
-  text-align: left;
+  color: black;
+  text-align: justify;
+  margin-top: 10px;
+  font-family: 'roboto', sans-serif;
+}
+
+.sectionServicosNoticias h4 {
+  color: black;
+  text-align: justify;
+  margin-top: 10px;
+  font-family: 'roboto', sans-serif;
+
 }
 
 
@@ -385,17 +395,26 @@ header.masthead p {
 /*END NOTICI*/
 
 .card-noticia{
-  
+
   border-radius: 5px;
-  height: 400px;
-  width: 100%;
+  background-color: white;
 }
 
+.card-noticia:hover{
 
+  background-color: #CFD2D5;
+  box-shadow: 10px 10px 15px black;
+  transition-duration: 0.5s;
+}
 
+.card-noticia-1{
 
-/*Lista Servico*/
-.lista-servicos{
+  border-radius: 5px;
+  background-color: white;
+}
 
-
+.card-noticia-1:hover{
+  background-color: #D0D0D0;
+  box-shadow: -10px 10px 15px black;
+  transition-duration: 0.5s;  
 }

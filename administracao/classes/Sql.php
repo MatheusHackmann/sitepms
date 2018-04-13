@@ -5,7 +5,7 @@ class Sql {
 	const HOSTNAME = "127.0.0.1";
 	const USERNAME = "root";
 	const PASSWORD = "";
-	const DBNAME = "db_site_pms";
+	const DBNAME = "site_pms";
 
 	private $conn;
 
@@ -47,6 +47,9 @@ class Sql {
 
 		$stmt->execute();
 
+		$id = $this->conn->lastInsertId();
+
+		return $id;
 	}
 
 	public function select($rawQuery, $params = array())
@@ -58,7 +61,7 @@ class Sql {
 
 		$stmt->execute();
 
-		return $stmt->fetchAll();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	}
 

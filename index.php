@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <?php require_once 'administracao/classes/Noticias.php'; ?>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -61,7 +64,7 @@
           </li>           
 
           <li class="nav-item">
-            <a href="#portfolio" class="nav-link js-scroll-trigger">Noticias</a><!-- home    target="blank"-->
+            <a href="#sec-noti" class="nav-link js-scroll-trigger">Serviços/Noticias</a><!-- home    target="blank"-->
           </li>                
 
           <li class="nav-item">
@@ -155,119 +158,89 @@
     </div>
   </section>
 
-  <section class="p-0 secretariasClass" id="portfolio"> <!--  -->
-    <div class="container p-0">
-      <div class="col-12">
-        <h2 id='secretarias' style="margin-left: -14px;"><span class="fas fa-newspaper"></span> NOTICIAS<h2>
-        </div>       
-        <div class="row no-gutters popup-gallery">
 
-  
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+  <section class="sectionServicosNoticias" id="sec-noti">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-sm-12 col-md-12 col-lg-3 text-center ">
+
+          <h2 style="color: #fff; margin-bottom: 30px; text-align: left;"><span class="fas fa-id-badge "></span> SERVIÇOS</h2>
+          <!-- <hr style="border: .5px solid #fff;">            -->            
           
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
+          <ul style="text-align: left;">
+            <li><a href=""><span class="fas fa-caret-right"></span> SIGISSWEB</a></li>
+            <li><a href=""><span class="fas fa-caret-right"></span> GIA-ICMS</a></li>
+            <li><a href=""><span class="fas fa-caret-right"></span> PORTAL DA TRANSPARÊNCIA</a></li>
+            <li><a href=""><span class="fas fa-caret-right"></span> LICENCIAMENTO AMBIENTAL</a></li>
+            <li><a href=""><span class="fas fa-caret-right"></span> HOLERITE WEB</a></li>
+            <li><a href=""><span class="fas fa-caret-right"></span> INCLUSÃO SOCIAL</a></li>
+            <li><a href=""><span class="fas fa-caret-right"></span> BOLETIM ONLINE</a></li>
+            <li><a href=""><span class="fas fa-caret-right"></span> ACESSO A ATRIBUTOS ONLINE</a></li>
+            <li><a href=""><span class="fas fa-caret-right"></span> HORÁRIOS DO TRANSPORTE MUNICIPAL</a></li>
+            <li><a href=""><span class="fas fa-caret-right"></span>  CONHEÇA SUMARÉ</a></li>
+          </ul>
+          <div class="mbr-section-btn text-left" id="156" style="margin-top: 40px; margin-left: 40px; margin-bottom: 30px">
+            <a href="https://play.google.com/store" target="_blank" class="btn btn-light display-4" style="color: #000">
+              MAIS SERVIÇOS
             </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+          </div>                           
         </div>
+
+
+        <div class="col-lg-1"></div>
+
+        <div class="col-sm-12 col-md-12 col-lg-8 text-center">
+          <h2 style="color: #fff; margin-bottom: 30px; text-align: left;"><span class="fas fa-newspaper"></span> NOTICIAS</h2>
+
+          <div class="row">
+
+
+            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia">
+              <a href="#">
+                <div>
+                  <img class="img-fluid rounded img-thumbnail" src="img/noticia_1.jpg" style="width: 100%; margin-top: 10px;">
+                  <h4 class="card-tittle"><b>Titulo</b></h4>
+                  <p class="card-text">Em uma parceria inédita, alunos do curso técnico de Informática da Escola Municipal Dr. Leandro Franceschini estão desenvolvendo para a Prefeitura de Sumaré um aplicativo oficial para celular (mobile) para atendimento ao cidadão...</p>
+                  <a href="#" class="btn btn-primary" style="margin-bottom: 10px;">Ver Mais</a>
+                </div>
+              </a>
+            </div>
+            
+            <div class="col-1"></div>
+
+            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia-1" >
+              <a href="#">
+                <div>
+                  <img class="img-fluid rounded img-thumbnail" src="img/noticia_1.jpg" style="width: 100%; margin-top: 10px">
+
+                  <h4 class="card-tittle"><b>Titulo</b></h4>
+                  <p class="card-text">Em uma parceria inédita, alunos do curso técnico de Informática da Escola Municipal Dr. Leandro Franceschini estão desenvolvendo para a Prefeitura de Sumaré um aplicativo oficial para celular (mobile) para atendimento ao cidadão...</p>
+                  <a href="#" class="btn btn-primary" style="margin-bottom: 10px;">Ver Mais</a>
+                </div>
+              </a>
+            </div>
+
+
+          </div>
+        </div></div>
       </div>
-    </section>    
+    </section>
+
+
+
 
     <section class="secretariasClass" id="sectionSecretarias">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <h2 id='secretarias'><span class="fas fa-list-ul"></span>  SECRETARIAS<h2>      
+        <div class="row" align="center">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <h2 id='secretarias'><span class="fas fa-list-ul"></span> SECRETARIAS<h2>      
             </div> 
           </div>
 
           <div class="row" style="margin: 5px 10px 25px 10px;">
-            <div class="col-12 col-md-8 col-lg-4 col-secretarias">
+            <div class="col-sm-12 col-md-12 col-lg-4 col-secretarias">
               <ul>
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Administração e RH</a></li>
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Chefia de Gabinete do Município</a></li>
@@ -279,7 +252,7 @@
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Desenvolvimento Social</a></li>
               </ul>
             </div>
-            <div class="col-12 col-md-8 col-lg-4 col-secretarias"> 
+            <div class="col-sm-12 col-md-12 col-lg-4 col-secretarias"> 
               <ul> 
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Educação</a></li>
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Finanças e Orçamento</a></li>
@@ -291,7 +264,7 @@
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Habitação</a></li>
               </ul>
             </div>
-            <div class="col-12 col-md-8 col-lg-4 col-secretarias">
+            <div class="col-sm-12 col-md-12 col-lg-4 col-secretarias">
               <ul>
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Mobilidade Urbana e Rural</a></li>
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Obras</a></li>
@@ -310,7 +283,7 @@
       <section class="footer text-white" id="contact">
         <div class="container-fluid">
           <div class="row">
-            <div id="footer_left_content" class="col-4">
+            <div id="footer_left_content" class="col-4" style="border-radius:8px;border: 3px solid #114065;">
               <p class="mbr-text">
                 <br><br>
                 <strong>Telefone</strong>
@@ -326,7 +299,7 @@
               <iframe class="google-map" frameborder="0" style="border-radius:8px;border: 3px solid #114065;" src="https://www.google.com/maps/embed/v1/place?q=dom%20barreto%201303&key=AIzaSyAeIl5Ozd4jhKbH9gCnyJwvvM7mp6nr_v0" allowfullscreen></iframe>
             </div>
           </div>
-          <div class="row" style="padding-top: 1%; padding-bottom: 1%">
+          <div class="row" style="padding-top: 1%; padding-bottom: 1%; margin-top: 10px; margin-bottom: 10px;">
             <div class="col-12" style="text-align: center;">
               © Prefeitura Municipal De Sumaré - JMP DEVELOPMENT
             </div>

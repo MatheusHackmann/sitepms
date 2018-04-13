@@ -1,4 +1,4 @@
-<?php require_once("footer.php"); ?>
+<?php require_once("header.php"); ?>
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -7,4 +7,4 @@
   </div>
 </div>
 
-<?php require_once("rodape.php"); ?>
+<?php require_once("footer.php"); ?>

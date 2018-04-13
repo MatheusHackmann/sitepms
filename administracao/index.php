@@ -1,10 +1,10 @@
-<?php require_once("footer.php"); ?>
+<?php require_once("header.php"); ?>
 
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-2" style="border:1px solid blue;">
 				<ul>
-					<li class="nav-link">LINK 1</li>
+					<li class="nav-link">COQUINHO 1</li>
 					<li class="nav-link">LINK 2</li>
 					<li class="nav-link">LINK 3</li>
 				</ul>
@@ -20,4 +20,4 @@
 		</div>
 	</div>
 
-<?php require_once("rodape.php"); ?>
+<?php require_once("footer.php"); ?>
