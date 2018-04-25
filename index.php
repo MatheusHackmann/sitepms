@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <?php require_once 'administracao/classes/Noticias.php'; ?>
+  <?php require_once 'classes/Noticia.php'; ?>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -104,6 +104,7 @@
   <section class="bg-primary" id="about">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-8 mx-auto text-center">
           <h2 class="section-heading text-white">We've got what you need!</h2>
           <hr class="light my-4">
@@ -156,6 +157,7 @@
         </div>
       </div>
     </div>
+    
   </section>
 
 
@@ -164,7 +166,7 @@
 
       <div class="row">
 
-        <div class="col-sm-12 col-md-12 col-lg-3 text-center ">
+        <div class="col-sm-12 col-md-12 col-lg-3 text-center">
 
           <h2 style="color: #fff; margin-bottom: 30px; text-align: left;"><span class="fas fa-id-badge "></span> SERVIÇOS</h2>
           <!-- <hr style="border: .5px solid #fff;">            -->            
@@ -188,39 +190,95 @@
           </div>                           
         </div>
 
-
         <div class="col-lg-1"></div>
 
         <div class="col-sm-12 col-md-12 col-lg-8 text-center">
           <h2 style="color: #fff; margin-bottom: 30px; text-align: left;"><span class="fas fa-newspaper"></span> NOTICIAS</h2>
 
           <div class="row">
-
+            <?php
+            require_once 'classes/Noticia.php';
+            $titulo = new Noticia();
+            $dados = $titulo->buscarDuas();
+            ?>
 
             <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia">
-              <a href="#">
+              <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][0]['id'];?>" type="submit">
                 <div>
-                  <img class="img-fluid rounded img-thumbnail" src="img/noticia_1.jpg" style="width: 100%; margin-top: 10px;">
-                  <h4 class="card-tittle"><b>Titulo</b></h4>
-                  <p class="card-text">Em uma parceria inédita, alunos do curso técnico de Informática da Escola Municipal Dr. Leandro Franceschini estão desenvolvendo para a Prefeitura de Sumaré um aplicativo oficial para celular (mobile) para atendimento ao cidadão...</p>
-                  <a href="#" class="btn btn-primary" style="margin-bottom: 10px;">Ver Mais</a>
+
+
+
+                  <?php
+
+                  $pasta = $dados[1][0]['pasta'];
+                  $nome = $dados[1][0]['nome'];
+
+                  echo "
+                  <img  class='img-fluid rounded img-thumbnail' 
+                  src='administracao/files/images/noticias/".$pasta .$nome. "' 
+                  style='width: 100%; margin-top: 10px'>
+                  ";
+                  ?>
+
+                  <h5 class="card-title"><b><?php
+                  $titulo =  utf8_encode($dados[0][0]['titulo']);
+                  $titulo = str_replace('@@', '“', $titulo);
+                  $titulo = str_replace('!!', '”',  $titulo);
+                  echo $titulo;
+
+                  ?></b></h5>
+                  <br>
+                  <h6 class="text-primary"  align="left"><b><?php echo $dados[0][0]['data'];?></b></h6>
+
+                  <p class="card-text"><?php 
+                  $not = utf8_encode($dados[0][0]['conteudo']); 
+                  $not = str_replace('@@', '“', $not);
+                  $not = str_replace('!!', '”',  $not);                  
+                  $noti = substr($not, 0, 300+1)."..."; 
+                  echo $noti;
+                  ?></p> 
+
+                  <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][0]['id'];?>" class="btn btn-primary" style="margin-bottom: 10px;">Ver Mais</a>
                 </div>
               </a>
             </div>
             
             <div class="col-1"></div>
 
-            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia-1" >
-              <a href="#">
+            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia" >
+              <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][1]['id'];?>" type="submit">
                 <div>
-                  <img class="img-fluid rounded img-thumbnail" src="img/noticia_1.jpg" style="width: 100%; margin-top: 10px">
+                  <?php
 
-                  <h4 class="card-tittle"><b>Titulo</b></h4>
-                  <p class="card-text">Em uma parceria inédita, alunos do curso técnico de Informática da Escola Municipal Dr. Leandro Franceschini estão desenvolvendo para a Prefeitura de Sumaré um aplicativo oficial para celular (mobile) para atendimento ao cidadão...</p>
-                  <a href="#" class="btn btn-primary" style="margin-bottom: 10px;">Ver Mais</a>
+                  $pasta = $dados[1][1]['pasta'];
+                  $nome = $dados[1][1]['nome'];
+
+                  echo "
+                  <img class='img-fluid rounded img-thumbnail' 
+                  src='administracao/files/images/noticias/".$pasta .$nome. "' 
+                  style='width: 100%; margin-top: 10px'>
+                  ";
+                  ?>
+                  <h5 class="card-title"><b><?php 
+                  $titulo = utf8_encode($dados[0][1]['titulo']); 
+                  $titulo = str_replace('@@', '“', $titulo);
+                  $titulo = str_replace('!!', '”',  $titulo);
+                  echo $titulo;                  
+
+                  ?></b></h5>
+                  <br>
+                  <h6 class="text-primary"  align="left"><b><?php echo $dados[0][1]['data'];?></b></h6>
+                  <p class="card-text"><?php 
+                  $not = utf8_encode($dados[0][1]['conteudo']);
+                  $not = str_replace('@@', '“', $not);
+                  $not = str_replace('!!', '”',  $not);                  
+                  $noti = substr($not, 0, 300+1)."..."; 
+                  echo $noti; ?></p>
+                  <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][1]['id'];?>" class="btn btn-primary " style="margin-bottom: 10px;">Ver Mais</a>
                 </div>
               </a>
             </div>
+            <a href="pages/todasNoticias.php" id="btn-noticia" class="btn btn-sm btn-block" style="margin: 30px 0px 0px -30px">Ver Todas As Noticias</a>
 
 
           </div>
@@ -270,13 +328,16 @@
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Obras</a></li>
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Planejamento</a></li>
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Procuradoria Geral do Município</a></li>
-                <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Saúde</a></li>
+                <li><a href="https://saudecoletiva1.wixsite.com/vigilanciasumare"><span class="fas fa-chevron-circle-right"></span> Saúde</a></li>
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Segurança</a></li>
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> Serviços Públicos</a></li>
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> SUMPREV</a></li>
               </ul>
+              <a href="https://saudecoletiva1.wixsite.com/vigilanciasumare" id="btn-noticia" class="btn btn-sm btn-block" style="margin: 30px 0px 0px -30px">Site da VIGILANCIA</a>
             </div>
+
           </div>
+
         </div>
       </section>
 
@@ -301,7 +362,7 @@
           </div>
           <div class="row" style="padding-top: 1%; padding-bottom: 1%; margin-top: 10px; margin-bottom: 10px;">
             <div class="col-12" style="text-align: center;">
-              © Prefeitura Municipal De Sumaré - JMP DEVELOPMENT
+              © Prefeitura Municipal De Sumaré - Tecnologia Sumaré<!-- JMP DEVELOPMENT -->
             </div>
           </div>
         </div>

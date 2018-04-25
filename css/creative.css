@@ -293,9 +293,9 @@ header.masthead p {
 
 .btn {
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   border: none;
-  border-radius: 300px;
+  border-radius: 10px;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -384,7 +384,15 @@ header.masthead p {
 
 .sectionServicosNoticias h4 {
   color: black;
-  text-align: justify;
+  text-align: left;
+  margin-top: 10px;
+  font-family: 'roboto', sans-serif;
+
+}
+
+.sectionServicosNoticias h5 {
+  color: black;
+  text-align: left;
   margin-top: 10px;
   font-family: 'roboto', sans-serif;
 
@@ -403,8 +411,13 @@ header.masthead p {
 .card-noticia:hover{
 
   background-color: #CFD2D5;
-  box-shadow: 10px 10px 15px black;
+ /* box-shadow: 10px 10px 15px black;*/
   transition-duration: 0.5s;
+}
+
+.card-noticia p{
+  
+  text-align: justify;
 }
 
 .card-noticia-1{
@@ -415,6 +428,67 @@ header.masthead p {
 
 .card-noticia-1:hover{
   background-color: #D0D0D0;
-  box-shadow: -10px 10px 15px black;
+  /*box-shadow: -10px 10px 15px black;*/
   transition-duration: 0.5s;  
+}
+
+/*BOTAO NOTICIA*/
+
+#btn-noticia {
+  background-color: #fff;
+  border-color: #fff;
+  color: black;
+}
+/**/
+
+/*busca-noticia*/
+
+.busca-noticia a{
+  color: #114065 !important; 
+}
+
+.busca-noticia a:hover{
+  color: black !important;
+}
+
+/****TESTE*/.busca-noticia td:hover{
+
+  background-color: #D4D4D4FF !important;
+
+}
+
+/**/
+
+
+/*NOTICIA ESPECIFICA*/
+
+.notiEspecifica h3{
+ text-align: center;
+ color: white;
+}
+
+.notiEspecifica h4{
+ text-align: left;
+ color: white;
+ font-size: 15px;
+}
+
+.notiEspecifica h6{
+ text-align: left;
+ color: white;
+ font-size: 14px;
+}
+
+.notiEspecifica p{
+ text-align: justify;
+ color: white;
+}
+
+.notiEspecifica img{
+ /*box-shadow: 1px 1px 1px black;*/
+}
+
+.notiEspecifica img:hover{
+ box-shadow: 5px 5px 5px black;
+ transition-duration: 0.2s;
 }

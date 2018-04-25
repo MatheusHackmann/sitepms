@@ -41,6 +41,7 @@
 	</div>
 </div>
 
+
 <?php
 
 require_once("../classes/Noticias.php");
@@ -48,7 +49,12 @@ require_once("../classes/Noticias.php");
 if(!empty($_POST)){
 	$cadNoticias = new Noticias();
 
+	if(!empty($_FILES['imagem'])){
 	$cadNoticias->cadImagem(md5(time().$_POST['titulo']),$_FILES['imagem']);
+}else{
+	$cadNoticias->cadImagem(md5(time().$_POST['titulo']),$_FILES['imagem']);
+}
+
 	$cadNoticias->cadastrarNoticia($_POST['titulo'], $_POST['subtitulo'], $_POST['data'], $_POST['conteudo']);
 }
 
