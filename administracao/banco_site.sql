@@ -8,7 +8,7 @@ use site_pms;
 
 create table noticias(
 id int auto_increment primary key, 
-titulo varchar(100),
+titulo varchar(200),
 subtitulo varchar(200),
 `data` date,
 conteudo varchar (5000)

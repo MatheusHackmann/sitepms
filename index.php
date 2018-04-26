@@ -202,10 +202,9 @@
             $dados = $titulo->buscarDuas();
             ?>
 
-            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia">
+            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia"  style="min-height: 670px; position: relative;">
               <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][0]['id'];?>" type="submit">
                 <div>
-
 
 
                   <?php
@@ -237,15 +236,16 @@
                   $noti = substr($not, 0, 300+1)."..."; 
                   echo $noti;
                   ?></p> 
-
-                  <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][0]['id'];?>" class="btn btn-primary" style="margin-bottom: 10px;">Ver Mais</a>
+                  <div class="col-11" style="position: absolute; bottom: 1px;" align="center">
+                    <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][0]['id'];?>" class="btn btn-primary" style="margin-bottom: 10px; margin-left: auto; margin-right: auto; ">Ver Mais</a>
+                  </div>
                 </div>
               </a>
             </div>
             
             <div class="col-1"></div>
 
-            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia" >
+            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia" style="min-height: 670px; position: relative;">
               <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][1]['id'];?>" type="submit">
                 <div>
                   <?php
@@ -274,7 +274,9 @@
                   $not = str_replace('!!', '”',  $not);                  
                   $noti = substr($not, 0, 300+1)."..."; 
                   echo $noti; ?></p>
-                  <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][1]['id'];?>" class="btn btn-primary " style="margin-bottom: 10px;">Ver Mais</a>
+                  <div class="col-11" style="position: absolute; bottom: 1px;" align="center">
+                    <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][1]['id'];?>" class="btn btn-primary " style="margin-bottom: 10px; margin-left: auto; margin-right: auto;">Ver Mais</a>
+                  </div>
                 </div>
               </a>
             </div>

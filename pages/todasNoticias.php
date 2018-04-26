@@ -91,7 +91,7 @@ require_once '../classes/Noticia.php';
 
 ?>
 
-<section class=" bg-primary">
+<section class=" bg-primary" style="padding-top: 30px !important;">
 	<div class="container-fluid">
 		<div class="row">
 
@@ -130,8 +130,8 @@ require_once '../classes/Noticia.php';
 					<div class="col-lg-1 col-md-1"></div>
 					
 
-					<div class="busca-noticia col-md-5 col-lg-7" style="background-color: white;"> <!-- md-6 e sem o ofset no inicio do filtro -->
-						<h3 align="center"  style="color: #081F31; margin-bottom: 5px; margin-top: 15px "> <i class="fas fa-book"></i><b> Todas as Noticias</b></h3>
+					<div class="busca-noticia col-md-5 col-lg-7 rounded" style="background-color: white;"> <!-- md-6 e sem o ofset no inicio do filtro -->
+						<h3 align="center"  style="color: #081F31; margin-bottom: 5px; margin-top: 15px "> <i class="fas fa-book"></i><b> Todas as Noticias</b></h3><br>
 						<?php
 						require_once '../classes/Noticia.php';
 
@@ -143,12 +143,6 @@ require_once '../classes/Noticia.php';
 						$inicio = isset($_GET['data_inicial']) ? $_GET['data_inicial'] : 0 ;
 						$fim = isset($_GET['data_final']) ? $_GET['data_final'] : date('Y-m-d');
 						
-						
-						
-
-						
-						
-
 
 
 						
@@ -159,7 +153,23 @@ require_once '../classes/Noticia.php';
 								/*echo "<br><a href='pages/buscaNoticias.php?".$result['id']. ".
 								$result['titulo'] ." </a>'"; /*$result['titulo'];*/
 
-								echo "<br> <a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</a></b><br>";
+								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</b></a><hr id='hr_blue'>";
+
+
+
+								
+
+								/*echo "<a style='color: black;' href='buscaNoticias.php?id=".
+								$result['id'];
+								."'>".
+								$result['data'];
+								." - <b>".  
+								$titulo = utf8_encode($result['titulo']);  
+								$titulo = str_replace('@@', '“', $titulo);
+								$titulo = str_replace('!!', '”',  $titulo); 
+								echo $titulo;
+								."</a></br><hr id='hr_blue'>";								*/
+
 
 								/*
 									TABELA:  , porem gostei mais sem tabela
@@ -202,7 +212,7 @@ require_once '../classes/Noticia.php';
 							foreach ($resultados as $key => $result) {
 
 								
-								echo "<br> <a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</a></b><br>";		
+								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</a></b><hr id='hr_blue'>";		
 								
 								/*echo "<table class='table table-bordered'>
 								<thead class='thead-dark'>
@@ -238,7 +248,9 @@ require_once '../classes/Noticia.php';
 							$resultados = $noticias->buscarTodasOrdenada($inicio, $fim);
 
 							foreach ($resultados as $key => $result) {
-								echo "<br> <a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</a></b><br>";
+								/*echo "<br> <a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</a></b><br>";*/
+
+								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</a></b><hr id='hr_blue'>";
 
 								/*echo "<table class='table table-bordered'>
 								<thead class='thead-dark'>

@@ -411,12 +411,12 @@ header.masthead p {
 .card-noticia:hover{
 
   background-color: #CFD2D5;
- /* box-shadow: 10px 10px 15px black;*/
+  /* box-shadow: 10px 10px 15px black;*/
   transition-duration: 0.5s;
 }
 
 .card-noticia p{
-  
+
   text-align: justify;
 }
 
@@ -464,24 +464,27 @@ header.masthead p {
 
 .notiEspecifica h3{
  text-align: center;
- color: white;
+ font-family: roboto;
+ color: black;
 }
 
 .notiEspecifica h4{
  text-align: left;
- color: white;
+ color: black;
+ font-family: roboto;
  font-size: 15px;
 }
 
 .notiEspecifica h6{
- text-align: left;
- color: white;
+ text-align: right;
+ color: black;
  font-size: 14px;
 }
 
 .notiEspecifica p{
  text-align: justify;
- color: white;
+ font-family: roboto;
+ color: black;
 }
 
 .notiEspecifica img{
@@ -489,6 +492,154 @@ header.masthead p {
 }
 
 .notiEspecifica img:hover{
+ box-shadow: -5px 5px 5px black;
+ transition-duration: 0.2s;
+ text-decoration: none;
+}
+
+.notiEspecifica #img-2:hover{
  box-shadow: 5px 5px 5px black;
  transition-duration: 0.2s;
+ text-decoration: none;
 }
+
+.notiEspecifica img{
+ border:2px solid #999;
+}
+
+.notiEspecifica #img-2{
+  border:2px solid #999;
+}
+
+
+
+
+/* LIGHTBOX */
+
+.notiEspecifica .row > .column {
+  padding: 0 8px;
+}
+
+.notiEspecifica .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+.notiEspecifica .column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.notiEspecifica .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.notiEspecifica .modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.notiEspecifica .close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.notiEspecifica .close:hover,
+.notiEspecifica .close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.notiEspecifica .mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.notiEspecifica .prev,
+.notiEspecifica .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.notiEspecifica .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.notiEspecifica .prev:hover,
+.notiEspecifica .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.notiEspecifica .numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.notiEspecifica .caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.notiEspecifica img.demo {
+  opacity: 0.6;
+}
+
+.notiEspecifica .active,
+.notiEspecifica .demo:hover {
+  opacity: 1;
+}
+
+.notiEspecifica img.hover-shadow {
+  transition: 0.3s
+}
+
+.notiEspecifica .hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+ /*FIM LIGHTBOX*/

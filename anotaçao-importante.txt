@@ -1,0 +1,4 @@
+Criar um campo depois na parte de adm das noticias
+de Foto Principal da noticia(foto de capa), e depois as demais fotos,
+para que na hora de mostra-la no index, mostrar a Foto Principal, e na hora que abre a noticia,
+deixar a Foto Principal como maior foto

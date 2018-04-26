@@ -202,7 +202,6 @@ class Noticia{
 			':ID'=>$id
 		));
 
-		print_r($num);
 		return($num);
 
 
