@@ -1,54 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<?php 
 
-	<?php require_once '../classes/Noticia.php'; 
-	setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
-	?>
+  //		‘‘‘‘‘‘‘
 
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<title>Prefeitura Municipal de Sumaré</title>
-
-	<!-- Bootstrap core CSS -->
-	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- Custom fonts for this template -->
-	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.woff?v=4.2.0"> -->
-	<!-- <link href=’https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css’ rel=’stylesheet’ type=’text/css’> -->
-  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  -->
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"> -->
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"> -->
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-  <!-- Plugin CSS -->
-  <link href="../vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="../css/creative.css" rel="stylesheet">
-  <link href="../css/styles.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-  <link rel="stylesheet" href="../icons/css/fa-svg-with-js.css">
-
-  
-  
-
-</head>
+require_once('head-nav.php');
+require_once('../classes/Noticia.php'); 
+setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
+?>
 
 <body id="page-top">
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-toggleable-sm navbar-expand-lg fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">
+			<a class="navbar-brand js-scroll-trigger" href="../#page-top">
 				<img src="../img/logo_sumare.png" alt="PMS" style="height: 3.8rem;">
 			</a>
 
@@ -63,19 +27,19 @@
         </li> -->        
 
         <li class="nav-item">
-        	<a href="../#sectionSecretarias" class="nav-link js-scroll-trigger">Secretarias</a><!-- home    target="blank"-->
+        	<a href="../index.php#sectionSecretarias" class="nav-link js-scroll-trigger">Secretarias</a><!-- home    target="blank"-->
         </li>           
 
         <li class="nav-item">
-        	<a href="../#sec-noti" class="nav-link js-scroll-trigger">Serviços/Noticias</a><!-- home    target="blank"-->
+        	<a href="../index.php#sec-noti" class="nav-link js-scroll-trigger">Serviços/Noticias</a><!-- home    target="blank"-->
         </li>                
 
         <li class="nav-item">
-        	<a href="../#pcidadao" class="nav-link js-scroll-trigger">Para o Cidadão</a><!-- home -->
+        	<a href="../index.php#pcidadao" class="nav-link js-scroll-trigger">Para o Cidadão</a><!-- home -->
         </li>              
 
         <li class="nav-item">
-        	<a href="../#pservidor" class="nav-link js-scroll-trigger">Para o Servidor</a><!-- home -->
+        	<a href="../index.php#pservidor" class="nav-link js-scroll-trigger">Para o Servidor</a><!-- home -->
         </li>                
 
 
@@ -113,8 +77,8 @@ else if(empty($_GET['id'])){
 			<div class="col-lg-2"></div> <!-- Tava com lg-1 e lg-10 na div de baixo -->
 			<div class="col-lg-8 rounded" style="background-color: white; padding: 30px 30px 30px 30px;">
 				<div class="notiEspecifica">
-					<h3><b><?php /*"Título: ".*/$titulo = utf8_encode($dados[0][0]['titulo']); $titulo = str_replace('@@', '“', $titulo); $titulo = str_replace('!!', '”',  $titulo); echo $titulo;?></b></h3><br>
-					<h4><?php $sub = utf8_encode($dados[0][0]['subtitulo']); $sub = str_replace('@@', '“', $sub); $sub = str_replace('!!', '”',  $sub); echo $sub; ?></h4><br>
+					<h3><b><?php /*"Título: ".*/$titulo = utf8_encode($dados[0][0]['titulo']); $titulo = str_replace('@@', '“', $titulo); $titulo = str_replace('!!', '”',  $titulo); $titulo = str_replace('!@', '‘', $titulo); $titulo = str_replace('@!', '’', $titulo); echo $titulo;?></b></h3><br>
+					<h4><?php $sub = utf8_encode($dados[0][0]['subtitulo']); $sub = str_replace('@@', '“', $sub); $sub = str_replace('!!', '”',  $sub); $sub = str_replace('!@', '‘', $sub); $sub = str_replace('@!', '’', $sub); echo $sub; ?></h4><br>
 
 					
 
@@ -151,10 +115,64 @@ else if(empty($_GET['id'])){
 						break;
 						case 2:
 
-						/*echo "<br>".$id = $dados[0][0]['id'];*/
-						echo "<a href='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."'><div  align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']." ' style='width:40%;'></a></div>";
+						echo "<!-- Images used to open the lightbox -->
+						
+						<div align='center'>
+						<img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."' onclick='openModal();currentSlide(1)' class='hover-shadow' style='width:60%;'>
 
-						echo "<br><a href='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."'><div align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']." ' style='width:25%;'></a></div><br>";						
+						<br><br><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."' onclick='openModal();currentSlide(2)' class='hover-shadow' style='width:30%;'>
+		
+						</div>
+						<!-- <div class='col-1'></div> uma div a mais para desbugar o modal -->
+						<br>	
+
+						<!-- The Modal/Lightbox -->
+						<!-- <div align='center'> -->
+
+						<div id='myModal' class='modal'>
+						<span class='close cursor' onclick='closeModal()'>&times;</span>
+						<div class='modal-content'>
+						
+						<div class='col-12 mySlides' align='center'>
+						<img id='img-3' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."' style='width:75%'>
+						</div>
+
+						<div class='col-12 mySlides' align='center'>
+						<img id='img-3' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."' style='width:75%'>
+						</div>
+						<!-- </div> -->
+
+
+						<!-- Next/previous controls -->
+						<a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
+						<a class='next' onclick='plusSlides(1)'>&#10095;</a>
+
+						<!-- Caption text -->
+						<div class='caption-container'>
+						<p id='caption'></p>
+						</div>
+
+						<!-- Thumbnail image controls -->
+						<div align='center'>
+
+						<img id='img-3' class='demo' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."' onclick='currentSlide(1)'  style='width:30%;'>
+						
+
+						<img id='img-3' class='demo' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."' onclick='currentSlide(2)' style='width:30%;'>
+
+
+						</div>
+
+						</div>
+						</div> ";							
+
+
+
+
+						/*echo "<br>".$id = $dados[0][0]['id'];*/
+						// echo "<a href='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."'><div  align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']." ' style='width:40%;'></a></div>";
+
+						// echo "<br><a href='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."'><div align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']." ' style='width:25%;'></a></div><br>";						
 
 						break;
 						/*VER SE TIVER 3 FOTOS NO MAXIMO, OU SE PODE HAVER MAIS*/
@@ -167,73 +185,57 @@ else if(empty($_GET['id'])){
 						echo "<a href='../administracao/files/images/noticias/".$dados[1][2]['pasta'] . $dados[1][2]['nome']."'><img class='rounded' src='../administracao/files/images/noticias/".$dados[1][2]['pasta'] . $dados[1][2]['nome']." ' style='width:25%;' ></a></div><br>";	*/
 
 						echo "<!-- Images used to open the lightbox -->
-						<div class='row'>
-						<div class='column'>
-						<img src='img1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+						
+						<div align='center'>
+						<img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."' onclick='openModal();currentSlide(1)' class='hover-shadow' style='width:60%;'>
+
+						<br><br><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."' onclick='openModal();currentSlide(2)' class='hover-shadow' style='width:30%;'>
+						
+						<img class='rounded' src='../administracao/files/images/noticias/".$dados[1][2]['pasta'] . $dados[1][2]['nome']."' onclick='openModal();currentSlide(3)' class='hover-shadow' style='width:30%;>
 						</div>
-						<div class="column">
-						<img src="img2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
-						</div>
-						<div class="column">
-						<img src="img3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
-						</div>
-						<div class="column">
-						<img src="img4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
-						</div>
-						</div>
+						<div class='col-1'></div> <!-- uma div a mais para desbugar o modal -->
+						<br>	
 
 						<!-- The Modal/Lightbox -->
-						<div id="myModal" class="modal">
-						<span class="close cursor" onclick="closeModal()">&times;</span>
-						<div class="modal-content">
+						<div id='myModal' class='modal'>
+						<span class='close cursor' onclick='closeModal()'>&times;</span>
+						<div class='modal-content'>
 
-						<div class="mySlides">
-						<div class="numbertext">1 / 4</div>
-						<img src="img1_wide.jpg" style="width:100%">
+						<div class='mySlides' align='center'>
+						<img id='img-3' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."' style='width:75%'>
 						</div>
 
-						<div class="mySlides">
-						<div class="numbertext">2 / 4</div>
-						<img src="img2_wide.jpg" style="width:100%">
+						<div class='mySlides' align='center'>
+						<img id='img-3' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."' style='width:75%'>
 						</div>
 
-						<div class="mySlides">
-						<div class="numbertext">3 / 4</div>
-						<img src="img3_wide.jpg" style="width:100%">
+						<div class='mySlides' align='center'>
+						<img id='img-3' src='../administracao/files/images/noticias/".$dados[1][2]['pasta'] . $dados[1][2]['nome']."' style='width:75%'>
 						</div>
 
-						<div class="mySlides">
-						<div class="numbertext">4 / 4</div>
-						<img src="img4_wide.jpg" style="width:100%">
-						</div>
 
 						<!-- Next/previous controls -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+						<a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
+						<a class='next' onclick='plusSlides(1)'>&#10095;</a>
 
-    <!-- Caption text -->
-    <div class="caption-container">
-    <p id="caption"></p>
-    </div>
+						<!-- Caption text -->
+						<div class='caption-container'>
+						<p id='caption'></p>
+						</div>
 
-    <!-- Thumbnail image controls -->
-    <div class="column">
-    <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature">
-    </div>
+						<!-- Thumbnail image controls -->
+						<div align='center'>
+						<img id='img-3' class='demo' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."' onclick='currentSlide(1)' alt='img1' style='width:30%;'>
+						
+						<img id='img-3' class='demo' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."' onclick='currentSlide(2)' alt='img2' style='width:30%;'>
+						
 
-    <div class="column">
-    <img class="demo" src="img2.jpg" onclick="currentSlide(2)" alt="Trolltunga">
-    </div>
+						
+						<img id='img-3' class='demo' src='../administracao/files/images/noticias/".$dados[1][2]['pasta'] . $dados[1][2]['nome']."' onclick='currentSlide(3)' alt='img3' style='width:30%;'>
+						</div>
 
-    <div class="column">
-    <img class="demo" src="img3.jpg" onclick="currentSlide(3)" alt="Mountains">
-    </div>
-
-    <div class="column">
-    <img class="demo" src="img4.jpg" onclick="currentSlide(4)" alt="Lights">
-    </div>
-    </div>
-    </div> ";
+						</div>
+						</div> ";
 
 						/*echo "<!-- Container for the image gallery -->
 						<div class='container'>
@@ -310,10 +312,17 @@ else if(empty($_GET['id'])){
 	<?php 
 	$conteudo = utf8_encode($dados[0][0]['conteudo']);
 	$conteudo = str_replace('@@', '“', $conteudo);
-	$conteudo = str_replace('!!', '”',  $conteudo); 
+	$conteudo = str_replace('!!', '”',  $conteudo);
+	$conteudo = str_replace('!@', '‘', $conteudo); 
+	$conteudo = str_replace('@!', '’', $conteudo); 
 					 // $conteudo = str_replace('@@', '“', $conteudo);
 					 // $conteudo = str_replace('!!', '”', $conteudo);
+	
+	echo str_replace(chr(10), '<br>', $conteudo);
+
 	echo $conteudo;
+	//echo ord($conteudo[1]);
+
 	?>
 </p>
 
@@ -336,46 +345,7 @@ else if(empty($_GET['id'])){
 <hr>
 
 
-<section class="footer text-white" id="contact">
-	<div class="container-fluid">
-		<div class="row">
-			<div id="footer_left_content" class="col-4" style="border-radius:8px;border: 3px solid #114065;">
-				<p class="mbr-text">
-					<br><br>
-					<strong>Telefone</strong>
-					<br>(19) 3399-5100
-					<br><br><br>
-					<strong>Endereço</strong>
-					<br>Rua Dom Barreto, 1.303
-					<br>Centro - Sumaré, SP
-				</p>
-			</div>
-
-			<div class="offset-2 col-6">
-				<iframe class="google-map" frameborder="0" style="border-radius:8px;border: 3px solid #114065;" src="https://www.google.com/maps/embed/v1/place?q=dom%20barreto%201303&key=AIzaSyAeIl5Ozd4jhKbH9gCnyJwvvM7mp6nr_v0" allowfullscreen></iframe>
-			</div>
-		</div>
-		<div class="row" style="padding-top: 1%; padding-bottom: 1%; margin-top: 10px; margin-bottom: 10px;">
-			<div class="col-12" style="text-align: center;">
-				© Prefeitura Municipal De Sumaré - JMP DEVELOPMENT
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- Bootstrap core JavaScript -->
-<script src="../vendor/jquery/jquery.min.js"></script>
-<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
-<script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
-<script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-<!-- Custom scripts for this template -->
-<script src="../js/creative.min.js"></script>
-
-<script src="../icons/js/fontawesome-all.js"></script>
+<?php require_once('footer.php');  ?>
 
 <script>
 // Open the Modal

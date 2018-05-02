@@ -8,12 +8,16 @@ use site_pms;
 
 create table noticias(
 id int auto_increment primary key, 
-titulo varchar(200),
-subtitulo varchar(200),
+titulo varchar(300),
+subtitulo varchar(500),
 `data` date,
 conteudo varchar (5000)
 
 ) default charset utf8;
+
+alter table noticias modify titulo varchar(300);
+
+desc noticias;
 
 drop table noticias;
 
@@ -46,12 +50,12 @@ on noticias.id = imagem_noticia.id
 create table eventos(
 
 id int auto_increment primary key,
-nome varchar(100),
+nome varchar(300),
 conteudo varchar(5000),
 `data` date,
 hora time,
-endereco varchar(96), -- RUA NUMERO - BAIRRO
-local_referencia varchar(150),
+endereco varchar(100), -- RUA NUMERO - BAIRRO 96
+local_referencia varchar(200),
 latitude long,
 longitude long
 
@@ -70,6 +74,8 @@ FOREIGN KEY (id) references eventos(id) ON delete cascade -- on delete cascade, 
 
 drop table imagem_evento;
 
+select * from noticias;
+
 select * from eventos;
 select * from imagem_evento;																							
 
@@ -78,6 +84,7 @@ on e.id = im.id;
 
 DELETE FROM `site_pms`.`eventos` 																																																																																																																																																																																																																																																																																								
 WHERE `id`='5';
+select * from imagem_noticia where id= 47;
 
 DELETE noticias,imagem_noticia FROM noticias INNER JOIN imagem_noticia WHERE noticias.id=8 AND imagem_noticia.id=8;
 

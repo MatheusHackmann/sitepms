@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
 
-  <?php require_once 'classes/Noticia.php'; ?>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -39,6 +37,11 @@
   
 
 </head>
+
+<?php 
+require_once('classes/Noticia.php'); 
+setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
+?>
 
 <body id="page-top">
 
@@ -157,7 +160,7 @@
         </div>
       </div>
     </div>
-    
+
   </section>
 
 
@@ -170,7 +173,7 @@
 
           <h2 style="color: #fff; margin-bottom: 30px; text-align: left;"><span class="fas fa-id-badge "></span> SERVIÇOS</h2>
           <!-- <hr style="border: .5px solid #fff;">            -->            
-          
+
           <ul style="text-align: left;">
             <li><a href=""><span class="fas fa-caret-right"></span> SIGISSWEB</a></li>
             <li><a href=""><span class="fas fa-caret-right"></span> GIA-ICMS</a></li>
@@ -202,81 +205,110 @@
             $dados = $titulo->buscarDuas();
             ?>
 
-            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia"  style="min-height: 670px; position: relative;">
+            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia"  style="min-height: 700px; position: relative;">
               <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][0]['id'];?>" type="submit">
                 <div>
+                  <div class="row">
+                    <div class="col-12" style="height: 250px;">
+                      <?php 
 
+                      $pasta = $dados[1][0]['pasta'];
+                      $nome = $dados[1][0]['nome'];
 
-                  <?php
-
-                  $pasta = $dados[1][0]['pasta'];
-                  $nome = $dados[1][0]['nome'];
-
-                  echo "
-                  <img  class='img-fluid rounded img-thumbnail' 
-                  src='administracao/files/images/noticias/".$pasta .$nome. "' 
-                  style='width: 100%; margin-top: 10px'>
-                  ";
-                  ?>
-
-                  <h5 class="card-title"><b><?php
-                  $titulo =  utf8_encode($dados[0][0]['titulo']);
-                  $titulo = str_replace('@@', '“', $titulo);
-                  $titulo = str_replace('!!', '”',  $titulo);
-                  echo $titulo;
-
-                  ?></b></h5>
-                  <br>
-                  <h6 class="text-primary"  align="left"><b><?php echo $dados[0][0]['data'];?></b></h6>
-
-                  <p class="card-text"><?php 
-                  $not = utf8_encode($dados[0][0]['conteudo']); 
-                  $not = str_replace('@@', '“', $not);
-                  $not = str_replace('!!', '”',  $not);                  
-                  $noti = substr($not, 0, 300+1)."..."; 
-                  echo $noti;
-                  ?></p> 
-                  <div class="col-11" style="position: absolute; bottom: 1px;" align="center">
-                    <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][0]['id'];?>" class="btn btn-primary" style="margin-bottom: 10px; margin-left: auto; margin-right: auto; ">Ver Mais</a>
+                      echo "
+                      <img  class='img-fluid rounded img-thumbnail' 
+                      src='administracao/files/images/noticias/".$pasta .$nome. "' 
+                      style='height: 100%; width: 100%; margin-top: 10px'>
+                      ";
+                      ?>
+                    </div>
                   </div>
+
+                  <div class="row">
+                    <div class="col-12" style="margin-top: 15px;">
+                      <h5 class="card-title"><b><?php
+                      $titulo =  utf8_encode($dados[0][0]['titulo']);
+                      $titulo = str_replace('@@', '“', $titulo);
+                      $titulo = str_replace('!!', '”',  $titulo);
+                      $titulo = str_replace('!@', '‘', $titulo);
+                      $titulo = str_replace('@!', '’', $titulo);
+                      echo $titulo;
+
+                      ?></b></h5>
+                      <br>
+                      <h6 class="text-primary"  align="left"><b><?php echo $dados[0][0]['data'];?></b></h6>
+
+                      <p class="card-text"><?php 
+                      $not = utf8_encode($dados[0][0]['conteudo']); 
+                      $not = str_replace('@@', '“', $not);
+                      $not = str_replace('!!', '”',  $not);
+                      $not = str_replace('!@', '‘', $not);
+                      $not = str_replace('@!', '’', $not);                                        
+                      $noti = substr($not, 0, 300+1)."..."; 
+                      echo $noti;
+                      ?></p> 
+                    </div>
+                  </div>
+
+                  <div class="col-11" style="position: absolute; bottom: 1px;" align="center">
+                    <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][0]['id'];?>" class="btn btn-primary " style="margin-bottom: 10px; margin-left: auto; margin-right: auto;">Ver Mais</a>
+                  </div>
+
                 </div>
               </a>
             </div>
-            
+
             <div class="col-1"></div>
 
-            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia" style="min-height: 670px; position: relative;">
+            <div class=" col-sm-12 col-md-5 col-lg-5 card-noticia" style="min-height: 700px; position: relative;">
               <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][1]['id'];?>" type="submit">
                 <div>
-                  <?php
 
-                  $pasta = $dados[1][1]['pasta'];
-                  $nome = $dados[1][1]['nome'];
+                  <div class="row">
+                    <div class="col-12" style="height: 250px;">                  
+                      <?php
 
-                  echo "
-                  <img class='img-fluid rounded img-thumbnail' 
-                  src='administracao/files/images/noticias/".$pasta .$nome. "' 
-                  style='width: 100%; margin-top: 10px'>
-                  ";
-                  ?>
-                  <h5 class="card-title"><b><?php 
-                  $titulo = utf8_encode($dados[0][1]['titulo']); 
-                  $titulo = str_replace('@@', '“', $titulo);
-                  $titulo = str_replace('!!', '”',  $titulo);
-                  echo $titulo;                  
+                      $pasta = $dados[1][1]['pasta'];
+                      $nome = $dados[1][1]['nome'];
 
-                  ?></b></h5>
-                  <br>
-                  <h6 class="text-primary"  align="left"><b><?php echo $dados[0][1]['data'];?></b></h6>
-                  <p class="card-text"><?php 
-                  $not = utf8_encode($dados[0][1]['conteudo']);
-                  $not = str_replace('@@', '“', $not);
-                  $not = str_replace('!!', '”',  $not);                  
-                  $noti = substr($not, 0, 300+1)."..."; 
-                  echo $noti; ?></p>
+                      echo "
+                      <img class='img-fluid rounded img-thumbnail' 
+                      src='administracao/files/images/noticias/".$pasta .$nome. "' 
+                      style='height: 100%;width: 100%; margin-top: 10px'>
+                      ";
+                      ?>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12" style="margin-top: 15px;">
+
+                      <h5 class="card-title"><b><?php 
+                      $titulo = utf8_encode($dados[0][1]['titulo']); 
+                      $titulo = str_replace('@@', '“', $titulo);
+                      $titulo = str_replace('!!', '”',  $titulo);
+                      $titulo = str_replace('!@', '‘', $titulo);
+                      $titulo = str_replace('@!', '’', $titulo);                      
+                      echo $titulo;                  
+
+                      ?></b></h5>
+                      <br>
+                      <h6 class="text-primary"  align="left"><b><?php echo $dados[0][1]['data'];?></b></h6>
+                      <p class="card-text"><?php 
+                      $not = utf8_encode($dados[0][1]['conteudo']);
+                      $not = str_replace('@@', '“', $not);
+                      $not = str_replace('!!', '”',  $not);
+                      $not = str_replace('!@', '‘', $not);
+                      $not = str_replace('@!', '’', $not);                                        
+                      $noti = substr($not, 0, 300+1)."..."; 
+                      echo $noti; ?></p>
+                    </div>
+                  </div>
+
                   <div class="col-11" style="position: absolute; bottom: 1px;" align="center">
                     <a href="pages/buscaNoticias.php?id=<?php echo $dados[0][1]['id'];?>" class="btn btn-primary " style="margin-bottom: 10px; margin-left: auto; margin-right: auto;">Ver Mais</a>
                   </div>
+
                 </div>
               </a>
             </div>
@@ -336,6 +368,7 @@
                 <li><a href="#"><span class="fas fa-chevron-circle-right"></span> SUMPREV</a></li>
               </ul>
               <a href="https://saudecoletiva1.wixsite.com/vigilanciasumare" id="btn-noticia" class="btn btn-sm btn-block" style="margin: 30px 0px 0px -30px">Site da VIGILANCIA</a>
+              <!-- (9 8230-4530 - moça da vigilância) -->
             </div>
 
           </div>
@@ -346,7 +379,7 @@
       <section class="footer text-white" id="contact">
         <div class="container-fluid">
           <div class="row">
-            <div id="footer_left_content" class="col-4" style="border-radius:8px;border: 3px solid #114065;">
+            <div id="footer_left_content" align="center" class="col-12 col-md-4 col-lg-4" style="border-radius:8px;border: 3px solid #114065;">
               <p class="mbr-text">
                 <br><br>
                 <strong>Telefone</strong>
@@ -358,7 +391,7 @@
               </p>
             </div>
 
-            <div class="offset-2 col-6">
+            <div class="offset-md-2 col-12 col-md-6 col-lg-6">
               <iframe class="google-map" frameborder="0" style="border-radius:8px;border: 3px solid #114065;" src="https://www.google.com/maps/embed/v1/place?q=dom%20barreto%201303&key=AIzaSyAeIl5Ozd4jhKbH9gCnyJwvvM7mp6nr_v0" allowfullscreen></iframe>
             </div>
           </div>
@@ -384,7 +417,9 @@
 
       <script src="icons/js/fontawesome-all.js"></script>
 
+
     </body>
 
     </html>
+
 

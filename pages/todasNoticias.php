@@ -1,52 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-	<?php require_once '../classes/Noticia.php'; ?>
-
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<title>Prefeitura Municipal de Sumaré</title>
-
-	<!-- Bootstrap core CSS -->
-	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- Custom fonts for this template -->
-	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.woff?v=4.2.0"> -->
-	<!-- <link href=’https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css’ rel=’stylesheet’ type=’text/css’> -->
-  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  -->
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"> -->
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"> -->
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-  <!-- Plugin CSS -->
-  <link href="../vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="../css/creative.css" rel="stylesheet">
-  <link href="../css/styles.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-  <link rel="stylesheet" href="../icons/css/fa-svg-with-js.css">
-
-  
-  
-
-</head>
+<?php 
+require_once('head-nav.php'); 
+require_once('../classes/Noticia.php'); 
+setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
+?>
 
 <body id="page-top">
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-toggleable-sm navbar-expand-lg fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="../#page-top">
+			<a class="navbar-brand js-scroll-trigger" href="#page-top">
 				<img src="../img/logo_sumare.png" alt="PMS" style="height: 3.8rem;">
 			</a>
 
@@ -61,19 +24,19 @@
         </li> -->        
 
         <li class="nav-item">
-        	<a href="../#sectionSecretarias" class="nav-link js-scroll-trigger">Secretarias</a><!-- home    target="blank"-->
+        	<a href="../index.php#sectionSecretarias" class="nav-link js-scroll-trigger">Secretarias</a><!-- home    target="blank"-->
         </li>           
 
         <li class="nav-item">
-        	<a href="../#sec-noti" class="nav-link js-scroll-trigger">Serviços/Noticias</a><!-- home    target="blank"-->
+        	<a href="../index.php#sec-noti" class="nav-link js-scroll-trigger">Serviços/Noticias</a><!-- home    target="blank"-->
         </li>                
 
         <li class="nav-item">
-        	<a href="#pcidadao" class="nav-link js-scroll-trigger">Para o Cidadão</a><!-- home -->
+        	<a href="../index.php#pcidadao" class="nav-link js-scroll-trigger">Para o Cidadão</a><!-- home -->
         </li>              
 
         <li class="nav-item">
-        	<a href="#pservidor" class="nav-link js-scroll-trigger">Para o Servidor</a><!-- home -->
+        	<a href="../index.php#pservidor" class="nav-link js-scroll-trigger">Para o Servidor</a><!-- home -->
         </li>                
 
 
@@ -86,16 +49,13 @@
 </nav>
 
 <br><br><br><br>	
-<?php
-require_once '../classes/Noticia.php';
 
-?>
 
 <section class=" bg-primary" style="padding-top: 30px !important;">
 	<div class="container-fluid">
 		<div class="row">
 
-			<div class="col-lg-10">
+			<div class="col-12 col-md-10 col-lg-10">
 				<!-- <h3 align="center"  style="color: #081F31; margin-bottom: 5px; margin-top: 15px "> <i class="fas fa-book"></i><b> Todas as Noticias</b></h3> -->
 
 				<div class="row">
@@ -103,34 +63,36 @@ require_once '../classes/Noticia.php';
 					<!--******  OBS: COLOCAR OU NÃO ESSE OFSET?? se colocar mudar o tamanho lg da noticias para 6 <div class="col-1"></div> -->
 					
 					<!-- <div class="col-lg-1"></div> -->
-					<div class=" col-md-4 col-lg-4">
+					<div class="col-12 col-md-4 col-lg-4">
 						<form action="todasNoticias.php" method="get">
 							
-
-							<div class="col-lg">
-								<!-- align="left" --><h4 style="color: #fff; margin-bottom: 10px; "><i class="fas fa-filter"></i> Filtrar pela Data:</h4>
-								<h6 style="color: white ;">De:
-									<input style="margin-left: 5px" type="date" name="data_inicial" placeholder="">
-								</h6>
+							<div class="row">
+								<div class="col-12" align="center">
+									<!-- align="left" --><h4 style="color: #fff; margin-bottom: 10px; "><i class="fas fa-filter"></i> Filtrar pela Data:</h4>
+									<h6 style="color: white ;">De:
+										<input style="margin-left: 5px" type="date" name="data_inicial" placeholder="">
+									</h6>
+								</div>
 							</div>
 
-							<div class="col-lg">
-								<h6 style="color: white;">Até:
-									<input style="margin-left: 2px" type="date" name="data_final" placeholder="">
-								</h6>
+							<div class="row">
+								<div class="col-12" align="center">
+									<h6 style="color: white;">Até:
+										<input style="margin-left: 2px" type="date" name="data_final" placeholder="">
+									</h6>
+								</div>
 							</div>
 
-							<div class="col-lg">
-								<input style="margin-left: 34px; margin-bottom: 20px"  type="submit" >
-							</div>						
+							<div class="row">
+								<div class="col-12" align="center">
+									<button class="btn btn-light" style="margin-bottom: 15px; margin-left: -35px;">Filtrar</button>
+								</div>	
+							</div>					
 						</form>
 					</div>
-
-					
-					<div class="col-lg-1 col-md-1"></div>
 					
 
-					<div class="busca-noticia col-md-5 col-lg-7 rounded" style="background-color: white;"> <!-- md-6 e sem o ofset no inicio do filtro -->
+					<div class="busca-noticia col-12 col-md-8 col-lg-8 rounded" style="background-color: white;"> <!-- md-6 e sem o ofset no inicio do filtro -->
 						<h3 align="center"  style="color: #081F31; margin-bottom: 5px; margin-top: 15px "> <i class="fas fa-book"></i><b> Todas as Noticias</b></h3><br>
 						<?php
 						require_once '../classes/Noticia.php';
@@ -153,7 +115,13 @@ require_once '../classes/Noticia.php';
 								/*echo "<br><a href='pages/buscaNoticias.php?".$result['id']. ".
 								$result['titulo'] ." </a>'"; /*$result['titulo'];*/
 
-								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</b></a><hr id='hr_blue'>";
+								$titulo = utf8_encode($result['titulo']);
+								$titulo = str_replace('@@', '“', $titulo); 
+								$titulo = str_replace('!!', '”',  $titulo);	
+								$titulo = str_replace('!@', '‘', $titulo);
+								$titulo = str_replace('@!', '’', $titulo);															
+
+								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".$titulo . "</b></a><hr id='hr_blue'>";
 
 
 
@@ -205,14 +173,21 @@ require_once '../classes/Noticia.php';
 
 							
 
+
 						}elseif(empty($fim)){
 
 							$resultados = $noticias->buscarTodasOrdenada($inicio, date('Y-m-d'));
 
 							foreach ($resultados as $key => $result) {
-
 								
-								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</a></b><hr id='hr_blue'>";		
+								$titulo = utf8_encode($result['titulo']);
+								$titulo = str_replace('@@', '“', $titulo); 
+								$titulo = str_replace('!!', '”',  $titulo);	
+								$titulo = str_replace('!@', '‘', $titulo);
+								$titulo = str_replace('@!', '’', $titulo);															
+
+								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".$titulo . "</b></a><hr id='hr_blue'>";
+
 								
 								/*echo "<table class='table table-bordered'>
 								<thead class='thead-dark'>
@@ -250,7 +225,13 @@ require_once '../classes/Noticia.php';
 							foreach ($resultados as $key => $result) {
 								/*echo "<br> <a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</a></b><br>";*/
 
-								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".  utf8_encode($result['titulo']). "</a></b><hr id='hr_blue'>";
+								$titulo = utf8_encode($result['titulo']);
+								$titulo = str_replace('@@', '“', $titulo); 
+								$titulo = str_replace('!!', '”',  $titulo);	
+								$titulo = str_replace('!@', '‘', $titulo);
+								$titulo = str_replace('@!', '’', $titulo);															
+
+								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".$titulo . "</b></a><hr id='hr_blue'>";
 
 								/*echo "<table class='table table-bordered'>
 								<thead class='thead-dark'>
@@ -297,67 +278,16 @@ require_once '../classes/Noticia.php';
 	</div>
 </section>
 
-						<!-- 
 
-						<section>
-						<div class="container-fluid">
-						<div class="row">
-						<div class="col-4">
-						<br><br><br>
 
-						</div>			
-						</div>
-						</div>
-						</section>
-
-					-->
-
-					<hr>
+<hr>
 
 
 
-					<section class="footer text-white" id="contact">
-						<div class="container-fluid">
-							<div class="row">
-								<div id="footer_left_content" class="col-4" style="border-radius:8px;border: 3px solid #114065;">
-									<p class="mbr-text">
-										<br><br>
-										<strong>Telefone</strong>
-										<br>(19) 3399-5100
-										<br><br><br>
-										<strong>Endereço</strong>
-										<br>Rua Dom Barreto, 1.303
-										<br>Centro - Sumaré, SP
-									</p>
-								</div>
+<?php require_once('footer.php'); ?>
 
-								<div class="offset-2 col-6">
-									<iframe class="google-map" frameborder="0" style="border-radius:8px;border: 3px solid #114065;" src="https://www.google.com/maps/embed/v1/place?q=dom%20barreto%201303&key=AIzaSyAeIl5Ozd4jhKbH9gCnyJwvvM7mp6nr_v0" allowfullscreen></iframe>
-								</div>
-							</div>
-							<div class="row" style="padding-top: 1%; padding-bottom: 1%; margin-top: 10px; margin-bottom: 10px;">
-								<div class="col-12" style="text-align: center;">
-									© Prefeitura Municipal De Sumaré - JMP DEVELOPMENT
-								</div>
-							</div>
-						</div>
-					</section>
+</body>
 
-					<!-- Bootstrap core JavaScript -->
-					<script src="../vendor/jquery/jquery.min.js"></script>
-					<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</html>
 
-					<!-- Plugin JavaScript -->
-					<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
-					<script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
-					<script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-					<!-- Custom scripts for this template -->
-					<script src="../js/creative.min.js"></script>
-
-					<script src="../icons/js/fontawesome-all.js"></script>
-
-				</body>
-
-				</html>
 

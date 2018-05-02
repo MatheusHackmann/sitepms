@@ -22,12 +22,18 @@ class Noticias{
 			
 			$conteudo = str_replace('“', '@@', $conteudo);
 			$conteudo = str_replace('”', '!!', $conteudo);	
+			$conteudo = str_replace('‘', '!@', $conteudo);
+			$conteudo = str_replace('’', '@!', $conteudo);
 
 			$titulo = str_replace('“', '@@', $titulo);
 			$titulo = str_replace('”', '!!', $titulo);
+			$titulo = str_replace('‘', '!@', $titulo);
+			$titulo = str_replace('’', '@!', $titulo);
 
 			$subtitulo = str_replace('“', '@@', $subtitulo);
-			$subtitulo = str_replace('”', '!!', $titulo);
+			$subtitulo = str_replace('”', '!!', $subtitulo);
+			$subtitulo = str_replace('‘', '!@', $subtitulo);
+			$subtitulo = str_replace('’', '@!', $subtitulo);
 
 
 		// variavel id, pois o $sql->query() retorna o valor do ultimo ID
@@ -52,16 +58,16 @@ class Noticias{
 
 		}
 
-		public function cadImagem($folder,$imagem)
+		public function cadImagem($folder,$imagem)																												
 		{
 			$caminho_imagem = "../files/images/noticias/$folder/";
 			if(!is_dir($caminho_imagem)){
 				mkdir($caminho_imagem);
 			}
 
-			for ($i=0; $i < count($imagem['name']); $i++) { 
+			for ($i=0; $i < count($imagem['name']																																																																																																																																																																																																																													); $i++) { 
 			//Analisa qual a extensao da imagem
-				preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $imagem["name"][$i], $ext);
+				preg_match("/\.(gif																											|bmp|png|jpg|jpeg){1}$/i", $imagem["name"][$i], $ext);
 			//Cria um nome unico pra imagem
 				$nome_imagem[$i] = md5(uniqid(time())).".".$ext[1];
 			//Cria o caminho que a fotos deve ser gravada
