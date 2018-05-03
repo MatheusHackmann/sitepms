@@ -24,16 +24,20 @@ class Noticias{
 			$conteudo = str_replace('”', '!!', $conteudo);	
 			$conteudo = str_replace('‘', '!@', $conteudo);
 			$conteudo = str_replace('’', '@!', $conteudo);
+			$conteudo = str_replace('–', '~!', $conteudo);
 
 			$titulo = str_replace('“', '@@', $titulo);
 			$titulo = str_replace('”', '!!', $titulo);
 			$titulo = str_replace('‘', '!@', $titulo);
 			$titulo = str_replace('’', '@!', $titulo);
+			$titulo = str_replace('–', '~!', $titulo);
 
 			$subtitulo = str_replace('“', '@@', $subtitulo);
 			$subtitulo = str_replace('”', '!!', $subtitulo);
 			$subtitulo = str_replace('‘', '!@', $subtitulo);
 			$subtitulo = str_replace('’', '@!', $subtitulo);
+			$subtitulo = str_replace('–', '~!', $subtitulo);
+
 
 
 		// variavel id, pois o $sql->query() retorna o valor do ultimo ID

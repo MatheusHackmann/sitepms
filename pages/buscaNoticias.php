@@ -77,8 +77,8 @@ else if(empty($_GET['id'])){
 			<div class="col-lg-2"></div> <!-- Tava com lg-1 e lg-10 na div de baixo -->
 			<div class="col-lg-8 rounded" style="background-color: white; padding: 30px 30px 30px 30px;">
 				<div class="notiEspecifica">
-					<h3><b><?php /*"Título: ".*/$titulo = utf8_encode($dados[0][0]['titulo']); $titulo = str_replace('@@', '“', $titulo); $titulo = str_replace('!!', '”',  $titulo); $titulo = str_replace('!@', '‘', $titulo); $titulo = str_replace('@!', '’', $titulo); echo $titulo;?></b></h3><br>
-					<h4><?php $sub = utf8_encode($dados[0][0]['subtitulo']); $sub = str_replace('@@', '“', $sub); $sub = str_replace('!!', '”',  $sub); $sub = str_replace('!@', '‘', $sub); $sub = str_replace('@!', '’', $sub); echo $sub; ?></h4><br>
+					<h3><b><?php /*"Título: ".*/$titulo = utf8_encode($dados[0][0]['titulo']); $titulo = str_replace('@@', '“', $titulo); $titulo = str_replace('!!', '”',  $titulo); $titulo = str_replace('!@', '‘', $titulo); $titulo = str_replace('@!', '’', $titulo); $titulo = str_replace('~!', '–', $titulo); echo $titulo;?></b></h3><br>
+					<h4><?php $sub = utf8_encode($dados[0][0]['subtitulo']); $sub = str_replace('@@', '“', $sub); $sub = str_replace('!!', '”',  $sub); $sub = str_replace('!@', '‘', $sub); $sub = str_replace('@!', '’', $sub); $sub = str_replace('~!', '–', $sub); echo $sub; ?></h4><br>
 
 					
 
@@ -310,17 +310,18 @@ else if(empty($_GET['id'])){
 
 <p>
 	<?php 
-	$conteudo = utf8_encode($dados[0][0]['conteudo']);
-	$conteudo = str_replace('@@', '“', $conteudo);
-	$conteudo = str_replace('!!', '”',  $conteudo);
-	$conteudo = str_replace('!@', '‘', $conteudo); 
-	$conteudo = str_replace('@!', '’', $conteudo); 
-					 // $conteudo = str_replace('@@', '“', $conteudo);
-					 // $conteudo = str_replace('!!', '”', $conteudo);
+	// $conteudo = utf8_encode($dados[0][0]['conteudo']);
+	// $conteudo = str_replace('@@', '“', $conteudo);
+	// $conteudo = str_replace('!!', '”',  $conteudo);
+	// $conteudo = str_replace('!@', '‘', $conteudo); 
+	// $conteudo = str_replace('@!', '’', $conteudo); 
+	// $conteudo = str_replace('~!', '–', $conteudo);
+	// 				 // $conteudo = str_replace('@@', '“', $conteudo);
+	// 				 // $conteudo = str_replace('!!', '”', $conteudo);
 	
-	echo str_replace(chr(10), '<br>', $conteudo);
+	// $conteudo = str_replace(chr(10), '<br>', $conteudo);
 
-	echo $conteudo;
+	echo $dados[0][0]['conteudo'];
 	//echo ord($conteudo[1]);
 
 	?>

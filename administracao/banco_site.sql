@@ -14,8 +14,8 @@ subtitulo varchar(500),
 conteudo varchar (5000)
 
 ) default charset utf8;
-
-alter table noticias modify titulo varchar(300);
+select * from noticias order by id desc;
+alter table noticias modify conteudo varchar(4);
 
 desc noticias;
 

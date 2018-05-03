@@ -232,6 +232,7 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
                       $titulo = str_replace('!!', '”',  $titulo);
                       $titulo = str_replace('!@', '‘', $titulo);
                       $titulo = str_replace('@!', '’', $titulo);
+                      $titulo = str_replace('~!', '–', $titulo);
                       echo $titulo;
 
                       ?></b></h5>
@@ -243,7 +244,8 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
                       $not = str_replace('@@', '“', $not);
                       $not = str_replace('!!', '”',  $not);
                       $not = str_replace('!@', '‘', $not);
-                      $not = str_replace('@!', '’', $not);                                        
+                      $not = str_replace('@!', '’', $not);      
+                      $not = str_replace('~!', '–', $not);                                  
                       $noti = substr($not, 0, 300+1)."..."; 
                       echo $noti;
                       ?></p> 
@@ -288,7 +290,8 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
                       $titulo = str_replace('@@', '“', $titulo);
                       $titulo = str_replace('!!', '”',  $titulo);
                       $titulo = str_replace('!@', '‘', $titulo);
-                      $titulo = str_replace('@!', '’', $titulo);                      
+                      $titulo = str_replace('@!', '’', $titulo);       
+                      $titulo = str_replace('~!', '–', $titulo);               
                       echo $titulo;                  
 
                       ?></b></h5>
@@ -299,7 +302,8 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
                       $not = str_replace('@@', '“', $not);
                       $not = str_replace('!!', '”',  $not);
                       $not = str_replace('!@', '‘', $not);
-                      $not = str_replace('@!', '’', $not);                                        
+                      $not = str_replace('@!', '’', $not);    
+                      $not = str_replace('~!', '–', $not);                                    
                       $noti = substr($not, 0, 300+1)."..."; 
                       echo $noti; ?></p>
                     </div>

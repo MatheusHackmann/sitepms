@@ -5,7 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="files/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="files/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="files/css/style.css">
+
+	<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+	<script>tinymce.init({ selector:'textarea#texto' });</script>
 </head>
 <body>	
 	<div class="container-fluid">

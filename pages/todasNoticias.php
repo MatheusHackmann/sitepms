@@ -119,7 +119,8 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
 								$titulo = str_replace('@@', '“', $titulo); 
 								$titulo = str_replace('!!', '”',  $titulo);	
 								$titulo = str_replace('!@', '‘', $titulo);
-								$titulo = str_replace('@!', '’', $titulo);															
+								$titulo = str_replace('@!', '’', $titulo);	
+								$titulo = str_replace('~!', '–', $titulo);														
 
 								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".$titulo . "</b></a><hr id='hr_blue'>";
 
@@ -184,7 +185,8 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
 								$titulo = str_replace('@@', '“', $titulo); 
 								$titulo = str_replace('!!', '”',  $titulo);	
 								$titulo = str_replace('!@', '‘', $titulo);
-								$titulo = str_replace('@!', '’', $titulo);															
+								$titulo = str_replace('@!', '’', $titulo);		
+								$titulo = str_replace('~!', '–', $titulo);													
 
 								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".$titulo . "</b></a><hr id='hr_blue'>";
 
@@ -229,7 +231,8 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
 								$titulo = str_replace('@@', '“', $titulo); 
 								$titulo = str_replace('!!', '”',  $titulo);	
 								$titulo = str_replace('!@', '‘', $titulo);
-								$titulo = str_replace('@!', '’', $titulo);															
+								$titulo = str_replace('@!', '’', $titulo);		
+								$titulo = str_replace('~!', '–', $titulo);													
 
 								echo "<a style='color: black;' href='buscaNoticias.php?id=".$result['id']. "'>".$result['data']. " - <b>".$titulo . "</b></a><hr id='hr_blue'>";
 
@@ -289,5 +292,3 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
 </body>
 
 </html>
-
-
