@@ -240,6 +240,7 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
                       <h6 class="text-primary"  align="left"><b><?php echo $dados[0][0]['data'];?></b></h6>
 
                       <p class="card-text"><?php 
+
                       $not = utf8_encode($dados[0][0]['conteudo']); 
                       $not = str_replace('@@', '“', $not);
                       $not = str_replace('!!', '”',  $not);
@@ -299,6 +300,7 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
                       <h6 class="text-primary"  align="left"><b><?php echo $dados[0][1]['data'];?></b></h6>
                       <p class="card-text"><?php 
                       $not = utf8_encode($dados[0][1]['conteudo']);
+                      $not = str_replace('&nbsp;', ' ', $not);
                       $not = str_replace('@@', '“', $not);
                       $not = str_replace('!!', '”',  $not);
                       $not = str_replace('!@', '‘', $not);

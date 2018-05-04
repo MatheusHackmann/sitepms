@@ -370,11 +370,7 @@ header.masthead p {
   list-style: none;
   color: #fff !important;
 }
-.sectionServicosNoticias h4 {
-  font-weight: 500;
-  margin-bottom: 0;
-  text-align: left;
-}
+
 .sectionServicosNoticias p {
   color: black;
   text-align: justify;
@@ -382,6 +378,29 @@ header.masthead p {
   font-family: 'roboto', sans-serif;
 }
 
+.sectionServicosNoticias h6 {
+  color: black;
+  margin-top: 10px;
+  font-family: 'roboto', sans-serif;
+
+}
+
+
+.sectionServicosNoticias h5 {
+  color: black;
+  text-align: left;
+  margin-top: 10px;
+  font-family: 'roboto', sans-serif;
+
+}
+
+.sectionServicosNoticias h4 {
+  font-weight: 500;
+  margin-bottom: 0;
+  text-align: left;
+  color: black !important;
+}
+
 .sectionServicosNoticias h4 {
   color: black;
   text-align: left;
@@ -390,9 +409,22 @@ header.masthead p {
 
 }
 
-.sectionServicosNoticias h5 {
+.sectionServicosNoticias h3 {
   color: black;
-  text-align: left;
+  margin-top: 10px;
+  font-family: 'roboto', sans-serif;
+
+}
+
+.sectionServicosNoticias h2 {
+  color: black;
+  margin-top: 10px;
+  font-family: 'roboto', sans-serif;
+
+}
+
+.sectionServicosNoticias h1 {
+  color: black;
   margin-top: 10px;
   font-family: 'roboto', sans-serif;
 
