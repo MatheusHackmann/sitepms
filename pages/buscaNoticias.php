@@ -111,7 +111,7 @@ else if(empty($_GET['id'])){
 						case 1:
 
 						/*echo "<br>".$id = $dados[0][0]['id'];*/
-						echo "<a href='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."'><div align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']." ' style='width:40%;'></a></div><br>";						
+						echo "<a target='_blank' href='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."'><div align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']." ' style='width:40%;'></a></div><br>";						
 						break;
 						case 2:
 

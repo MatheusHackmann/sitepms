@@ -29,7 +29,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/creative.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/footer.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
   <link rel="stylesheet" href="icons/css/fa-svg-with-js.css">
 
@@ -77,7 +77,6 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
           <li class="nav-item">
             <a href="#pservidor" class="nav-link js-scroll-trigger">Para o Servidor</a><!-- home -->
           </li>                
-
           
           <li class="nav-item">
             <a href="#contact" class="nav-link js-scroll-trigger">Contato</a><!-- home -->
@@ -228,25 +227,25 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
                     <div class="col-12" style="margin-top: 15px;">
                       <h5 class="card-title"><b><?php
                       $titulo =  utf8_encode($dados[0][0]['titulo']);
-                      $titulo = str_replace('@@', '“', $titulo);
+                      /*$titulo = str_replace('@@', '“', $titulo);
                       $titulo = str_replace('!!', '”',  $titulo);
                       $titulo = str_replace('!@', '‘', $titulo);
                       $titulo = str_replace('@!', '’', $titulo);
-                      $titulo = str_replace('~!', '–', $titulo);
+                      $titulo = str_replace('~!', '–', $titulo);*/
                       echo $titulo;
 
                       ?></b></h5>
                       <br>
                       <h6 class="text-primary"  align="left"><b><?php echo $dados[0][0]['data'];?></b></h6>
-
+                      
                       <p class="card-text"><?php 
 
                       $not = utf8_encode($dados[0][0]['conteudo']); 
-                      $not = str_replace('@@', '“', $not);
+                      /*$not = str_replace('@@', '“', $not);
                       $not = str_replace('!!', '”',  $not);
                       $not = str_replace('!@', '‘', $not);
                       $not = str_replace('@!', '’', $not);      
-                      $not = str_replace('~!', '–', $not);                                  
+                      $not = str_replace('~!', '–', $not);  */                                
                       $noti = substr($not, 0, 300+1)."..."; 
                       echo $noti;
                       ?></p> 

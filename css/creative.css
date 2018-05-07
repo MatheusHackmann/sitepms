@@ -366,9 +366,9 @@ header.masthead p {
   padding-bottom: 50px;
   background-color: #114065;
 }
+
 .sectionServicosNoticias li {
-  list-style: none;
-  color: #fff !important;
+  list-style-type: none;
 }
 
 .sectionServicosNoticias p {
@@ -432,7 +432,11 @@ header.masthead p {
 
 
 
+
 /*END NOTICI*/
+body{
+  font-family: roboto;
+}
 
 .card-noticia{
 
@@ -447,21 +451,14 @@ header.masthead p {
   transition-duration: 0.5s;
 }
 
+.card-noticia li {
+  list-style-type: disc;
+  color: #000 !important;
+}
+
 .card-noticia p{
 
   text-align: justify;
-}
-
-.card-noticia-1{
-
-  border-radius: 5px;
-  background-color: white;
-}
-
-.card-noticia-1:hover{
-  background-color: #D0D0D0;
-  /*box-shadow: -10px 10px 15px black;*/
-  transition-duration: 0.5s;  
 }
 
 /*BOTAO NOTICIA*/

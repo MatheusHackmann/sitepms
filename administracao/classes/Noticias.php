@@ -19,7 +19,7 @@ class Noticias{
 		$numNome = count($getNome);
 
 		if($numNome < 1){ 		
-			
+			/*
 			$conteudo = str_replace('“', '@@', $conteudo);
 			$conteudo = str_replace('”', '!!', $conteudo);	
 			$conteudo = str_replace('‘', '!@', $conteudo);
@@ -37,7 +37,7 @@ class Noticias{
 			$subtitulo = str_replace('‘', '!@', $subtitulo);
 			$subtitulo = str_replace('’', '@!', $subtitulo);
 			$subtitulo = str_replace('–', '~!', $subtitulo);
-
+*/
 
 
 		// variavel id, pois o $sql->query() retorna o valor do ultimo ID

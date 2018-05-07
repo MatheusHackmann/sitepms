@@ -39,7 +39,7 @@ insert into noticias(titulo, subtitulo,  `data`, conteudo) values ('Beybe beybe 
 
 truncate table noticias; 
 
-select * from noticias; 
+select * from noticias order by id desc; 
 
 select * from noticias join imagem_noticia
 on noticias.id = imagem_noticia.id

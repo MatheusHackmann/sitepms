@@ -32,7 +32,7 @@
 
   <!-- Custom styles for this template -->
   <link href="../css/creative.css" rel="stylesheet">
-  <link href="../css/styles.css" rel="stylesheet">
+  <link href="../css/footer.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
   <link rel="stylesheet" href="../icons/css/fa-svg-with-js.css">
 
