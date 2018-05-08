@@ -1,0 +1,6 @@
+diario 
+buscar por assunto
+banners 
+girar em carrosel
+FAZER UM CAMPO PRA SECRETARIAS (para adicionar as noticias(pra ajudar no filtro))
+colocar um count na frente dos resultados

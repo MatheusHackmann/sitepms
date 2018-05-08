@@ -9,7 +9,7 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
 	<!-- Navigation -->
 	<nav class="navbar navbar-toggleable-sm navbar-expand-lg fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">
+			<a class="navbar-brand js-scroll-trigger" href="../#page-top">
 				<img src="../img/logo_sumare.png" alt="PMS" style="height: 3.8rem;">
 			</a>
 
@@ -55,7 +55,7 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
 	<div class="container-fluid">
 		<div class="row">
 
-			<div class="col-12 col-md-10 col-lg-10">
+			<div class="col-12 col-md-10 col-lg-10" style="  ">
 				<!-- <h3 align="center"  style="color: #081F31; margin-bottom: 5px; margin-top: 15px "> <i class="fas fa-book"></i><b> Todas as Noticias</b></h3> -->
 
 				<div class="row">

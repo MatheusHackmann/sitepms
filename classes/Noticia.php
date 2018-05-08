@@ -6,7 +6,7 @@ class Noticia{
 	public function buscarDuas(){
 		$sql = new Sql();
 
-		$results = $sql->select("SELECT id, titulo, `data`, conteudo from noticias order by id desc LIMIT 2");
+		$results = $sql->select("SELECT id, titulo, `data`, conteudo from noticias order by id desc LIMIT 6");
 		// subtitulo(não é pego no select) 
 
 		$diasSemana = array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado');
@@ -86,7 +86,7 @@ class Noticia{
 
 
 
-		$res = $sql->select("SELECT id, nome, pasta FROM imagem_noticia GROUP BY id ORDER BY id desc LIMIT 2");
+		$res = $sql->select("SELECT id, nome, pasta FROM imagem_noticia GROUP BY id ORDER BY id desc LIMIT 6");
 
 		
 

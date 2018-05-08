@@ -22,16 +22,13 @@ setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8');
 
 			<div class="collapse navbar-collapse navLink" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
-          <!--<li class="nav-item">
-            <a href="#" class="nav-link">Fanpage</a>
-        </li> -->        
 
         <li class="nav-item">
-        	<a href="../index.php#sectionSecretarias" class="nav-link js-scroll-trigger">Secretarias</a><!-- home    target="blank"-->
+        	<a href="../index.php#sectionSecretarias" class="nav-link js-scroll-trigger">Secretarias</a>
         </li>           
 
         <li class="nav-item">
-        	<a href="../index.php#sec-noti" class="nav-link js-scroll-trigger">Serviços/Noticias</a><!-- home    target="blank"-->
+        	<a href="../index.php#sec-noti" class="nav-link js-scroll-trigger">Serviços/Noticias</a>
         </li>                
 
         <li class="nav-item">
@@ -77,9 +74,23 @@ else if(empty($_GET['id'])){
 			<div class="col-lg-2"></div> <!-- Tava com lg-1 e lg-10 na div de baixo -->
 			<div class="col-lg-8 rounded" style="background-color: white; padding: 30px 30px 30px 30px;">
 				<div class="notiEspecifica">
-					<h3><b><?php /*"Título: ".*/$titulo = utf8_encode($dados[0][0]['titulo']); $titulo = str_replace('@@', '“', $titulo); $titulo = str_replace('!!', '”',  $titulo); $titulo = str_replace('!@', '‘', $titulo); $titulo = str_replace('@!', '’', $titulo); $titulo = str_replace('~!', '–', $titulo); echo $titulo;?></b></h3><br>
-					<h4><?php $sub = utf8_encode($dados[0][0]['subtitulo']); $sub = str_replace('@@', '“', $sub); $sub = str_replace('!!', '”',  $sub); $sub = str_replace('!@', '‘', $sub); $sub = str_replace('@!', '’', $sub); $sub = str_replace('~!', '–', $sub); echo $sub; ?></h4><br>
+					<?php
+					$url = urlencode('http://10.0.20.94/sitepms/pages/buscaNoticias.php?id='.$id);
+					echo '<iframe src="https://www.facebook.com/plugins/share_button.php?href='.$url.'&layout=button&size=small&mobile_iframe=true&width=97&height=20" width="97" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>';
+					?>
+					<h3>
+						<b><?php echo utf8_encode($dados[0][0]['titulo']);?></b>
+					</h3><br>
+					
+					<h6 style="text-align: left;"><b><?php echo date('d/m/Y',strtotime($dados[0][0]['data']));?></b></h6>
 
+					<h4><?php 
+					$sub = utf8_encode($dados[0][0]['subtitulo']);
+					str_replace('~!', '–', $sub);
+					echo $sub; ?></h4><br>
+					
+						
+					
 					
 
 					<?php
@@ -109,8 +120,6 @@ else if(empty($_GET['id'])){
 						break;
 						
 						case 1:
-
-						/*echo "<br>".$id = $dados[0][0]['id'];*/
 						echo "<a target='_blank' href='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."'><div align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']." ' style='width:40%;'></a></div><br>";						
 						break;
 						case 2:
@@ -121,7 +130,7 @@ else if(empty($_GET['id'])){
 						<img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."' onclick='openModal();currentSlide(1)' class='hover-shadow' style='width:60%;'>
 
 						<br><br><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."' onclick='openModal();currentSlide(2)' class='hover-shadow' style='width:30%;'>
-		
+
 						</div>
 						<!-- <div class='col-1'></div> uma div a mais para desbugar o modal -->
 						<br>	
@@ -164,25 +173,11 @@ else if(empty($_GET['id'])){
 						</div>
 
 						</div>
-						</div> ";							
-
-
-
-
-						/*echo "<br>".$id = $dados[0][0]['id'];*/
-						// echo "<a href='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."'><div  align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']." ' style='width:40%;'></a></div>";
-
-						// echo "<br><a href='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."'><div align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']." ' style='width:25%;'></a></div><br>";						
+						</div> ";										
 
 						break;
 						/*VER SE TIVER 3 FOTOS NO MAXIMO, OU SE PODE HAVER MAIS*/
 						default:
-
-						/*echo "<a href='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']."'><div align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][0]['pasta'] . $dados[1][0]['nome']." ' style='width:40%;'></a></div>";
-
-						echo "<br><a href='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']."'><div  align='center'><img class='rounded' id='img-2' src='../administracao/files/images/noticias/".$dados[1][1]['pasta'] . $dados[1][1]['nome']." ' style='width:25%;'></a> &nbsp;&nbsp;&nbsp;&nbsp;";
-
-						echo "<a href='../administracao/files/images/noticias/".$dados[1][2]['pasta'] . $dados[1][2]['nome']."'><img class='rounded' src='../administracao/files/images/noticias/".$dados[1][2]['pasta'] . $dados[1][2]['nome']." ' style='width:25%;' ></a></div><br>";	*/
 
 						echo "<!-- Images used to open the lightbox -->
 						
@@ -236,112 +231,25 @@ else if(empty($_GET['id'])){
 
 						</div>
 						</div> ";
-
-						/*echo "<!-- Container for the image gallery -->
-						<div class='container'>
-
-						<!-- Full-width images with number text -->
-						<div class='mySlides'>
-						<div class='numbertext'>1 / 6</div>
-						<img src='img_woods_wide.jpg' style='width:100%'>
-						</div>
-
-						<div class='mySlides'>
-						<div class='numbertext'>2 / 6</div>
-						<img src='img_fjords_wide.jpg' style='width:100%'>
-						</div>
-
-						<div class='mySlides'>
-						<div class='numbertext'>3 / 6</div>
-						<img src='img_mountains_wide.jpg' style='width:100%'>
-						</div>
-
-						<div class='mySlides'>
-						<div class='numbertext'>4 / 6</div>
-						<img src='img_lights_wide.jpg' style='width:100%'>
-						</div>
-
-						<div class='mySlides'>
-						<div class='numbertext'>5 / 6</div>
-						<img src='img_nature_wide.jpg' style='width:100%'>
-						</div>
-
-						<div class='mySlides'>
-						<div class='numbertext'>6 / 6</div>
-						<img src='img_snow_wide.jpg' style='width:100%''>
-						</div>
-
-						<!-- Next and previous buttons -->
-  <a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
-  <a class='next' onclick='plusSlides(1)''>&#10095;</a>
-
-  <!-- Image text -->
-  <div class='caption-container'>
-  <p id='caption'></p>
-  </div>
-
-  <!-- Thumbnail images -->
-  <div class='row'>
-  <div class='column'>
-  <img class='demo cursor' src='img_woods.jpg' style='width:100%' onclick='currentSlide(1)' alt='The Woods'>
-  </div>
-  <div class='column'>
-  <img class='demo cursor' src='img_fjords.jpg' style='width:100%' onclick='currentSlide(2)' alt='Trolltunga, Norway'>
-  </div>
-  <div class='column'>
-  <img class='demo cursor' src='img_mountains.jpg' style='width:100%' onclick='currentSlide(3)' alt='Mountains and fjords'>
-  </div>
-  <div class='column'>
-  <img class='demo cursor' src='img_lights.jpg' style='width:100%' onclick='currentSlide(4)' alt='Northern Lights'>
-  </div>
-  <div class='column'>
-  <img class='demo cursor' src='img_nature.jpg' style='width:100%' onclick='currentSlide(5)' alt='Nature and sunrise'>
-  </div>
-  <div class='column'>
-  <img class='demo cursor' src='img_snow.jpg' style='width:100%' onclick='currentSlide(6)' alt='Snowy Mountains'>
-  </div>
-  </div>
-  </div>";*/
-  break;
+						break;
 
 
-}
-?>
+					}
+					?>
 
-<p>
-	<?php 
-	// $conteudo = utf8_encode($dados[0][0]['conteudo']);
-	// $conteudo = str_replace('@@', '“', $conteudo);
-	// $conteudo = str_replace('!!', '”',  $conteudo);
-	// $conteudo = str_replace('!@', '‘', $conteudo); 
-	// $conteudo = str_replace('@!', '’', $conteudo); 
-	// $conteudo = str_replace('~!', '–', $conteudo);
-	// 				 // $conteudo = str_replace('@@', '“', $conteudo);
-	// 				 // $conteudo = str_replace('!!', '”', $conteudo);
-	
-	// $conteudo = str_replace(chr(10), '<br>', $conteudo);
+					<p>
+						<?php 
+						echo $dados[0][0]['conteudo'];
+						?>
+					</p>
+				</div>
 
-	echo $dados[0][0]['conteudo'];
-	//echo ord($conteudo[1]);
-
-	?>
-</p>
-
-<h6><b><?php echo date('d/m/Y',strtotime($dados[0][0]['data']));?></b></h6>
-</div>
-
-
-<div class="row">
-	<div class="notiEspecifica" style="color: white;">
-
-
+				<div class="row">
+					<div class="notiEspecifica" style="color: white;"></div>
+				</div>
+			</div>
+		</div>
 	</div>
-
-</div>
-
-</div>
-</div>
-</div>
 </section>
 <hr>
 
@@ -394,4 +302,3 @@ function showSlides(n) {
 </body>
 
 </html>
-

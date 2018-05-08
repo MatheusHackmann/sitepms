@@ -9,10 +9,10 @@
 
 	<script src="../files/js/tinymce/tinymce.min.js"></script>
 	<script>tinymce.init({ 
-		selector:'textarea#conteudo',
+		selector:'textarea',
 		branding: false,
 		language: 'pt_BR',
-		menubar: 'edit insert format table tools help'
+		menubar: 'edit insert format table tools help',
 	});</script>	
 </head>
 <body>	
@@ -54,13 +54,15 @@
 					<h1>Nova Notícia</h1>
 					<form action="cad_noticias.php" method="post" enctype="multipart/form-data" class="form">
 						<div class="col-12">
-							<div class="form-group col-8">
+							<div class="form-group col-10">
 								<label for="idTitulo">*Título: </label>
-								<input class="form-control" type="text" name="titulo" id="idTitulo" required autocomplete="off">
+								<textarea style="width: 100%; height: 5px;" name="titulo" id="idTitulo"></textarea>
+								<!--<input class="form-control" type="text" name="titulo" id="idTitulo" required autocomplete="off">-->
 							</div>
-							<div class="form-group col-12">
+							<div class="form-group col-10">
 								<label for="idSubtitulo">*Subtítulo: </label>
-								<input class="form-control" type="text" name="subtitulo" id="idSubtitulo" autocomplete="off">	
+								<textarea style="width: 100%; height: 1px;" name="subtitulo" id="idSubtitulo"></textarea>
+								<!--<input class="form-control" type="text" name="subtitulo" id="idSubtitulo" autocomplete="off>-->
 							</div>
 
 							<div class="form-group col-3" >
@@ -68,9 +70,9 @@
 								<input class="form-control" type="date" name="data" id="idData" required value="<?php echo date('Y-m-d'); ?>">		
 							</div>
 
-							<div class="form-group col-11">
+							<div class="form-group col-12">
 								<label for="idConteudo">*Conteúdo: </label>
-								<textarea id="conteudo" name="conteudo"></textarea>
+								<textarea style="width: 100%; height: 250px;" id="conteudo" name="conteudo"></textarea>
 							</div>
 
 
