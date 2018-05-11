@@ -12,7 +12,7 @@
 		selector:'textarea',
 		branding: false,
 		language: 'pt_BR',
-		menubar: 'edit insert format table tools help',
+		menubar: 'edit insert format table tools helps',
 	});</script>	
 </head>
 <body>	

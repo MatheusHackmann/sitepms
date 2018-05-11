@@ -1,20 +1,16 @@
 <?php
-	require_once 'Sql.php';
-	
+require_once 'Sql.php';
+
 class Noticia{
 
-	public function buscarDuas(){
+	public function buscar($quantidade){
 		$sql = new Sql();
 
-		$results = $sql->select("SELECT id, titulo, `data`, conteudo from noticias order by id desc LIMIT 6");
+		$results = $sql->select("SELECT id, titulo, `data`, conteudo from noticias order by id desc LIMIT $quantidade");
 		// subtitulo(não é pego no select) 
 
 		$diasSemana = array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado');
 		$meses = array('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro');
-
-
-
-
 
 		foreach ($results as $result => $value) {
 			$dia = $diasSemana[date('w',strtotime($value['data']))];
@@ -23,77 +19,10 @@ class Noticia{
 			$data = str_replace("*", "de", $data);
 			$data = str_replace("@", $mes, $data);
 			$data = str_replace("$", "de", $data);
-			$resultado[] = array('titulo'=>$value['titulo'],'conteudo'=>$value['conteudo'],'data'=>$data, 'id'=>$value['id']);
-
-
-		//	$id = $value['id'];
-
-
-			//print_r($resultss);
-
-	//		print_r($id);
-
-	//		$id1 = $id[0];
-
-			// array_merge($id);
-
-			//$imagem = array($result['nome'], $result['pasta']);
-			
-			//print_r($imagem);
-
-			//echo "<a style='color:#212529' href='?id=".$result['id']."'>" .$result['titulo']. "</a>";
-		}
-	//	print_r($id);
-
-		
-		
-
-/*
-		$id = $result['id'];
-
-		$res[$id]= $sql->select("SELECT * FROM imagem_noticia WHERE id = :ID ", array(
-			':ID' => $id	
-
-		));			
-
-		foreach ($res as $re) {
-			print_r($re);
-
-		}		
-*/
-
-
-
-
-		//$resultss = $sql->select("SELECT id, nome, pasta FROM imagem_noticia");
-
-	/*	for ($i=0; $i < count($results) ; $i++) { 
-
-			$result = $sql->select("SELECT * FROM imagem_noticia WHERE id = :ID ", array(
-				':ID' => $id			
-			));
-
-			print_r($result);
+			$resultado[] = array('titulo'=>$value['titulo'],'conteudo'=>$value['conteudo'],'data'=>$data, 'id'=>$value['id']);		
 		}
 
-		$result = $sql->select("SELECT * FROM imagem_noticia WHERE id = :ID ", array(
-			':ID' => $id
-		));			
-
-		array_push($results, $result);
-*/
-		//return $results; 				
-
-
-
-		$res = $sql->select("SELECT id, nome, pasta FROM imagem_noticia GROUP BY id ORDER BY id desc LIMIT 6");
-
-		
-
-		/*print_r($res);
-		print_r($resultado);
-*/
-
+		$res = $sql->select("SELECT id, nome, pasta FROM imagem_noticia GROUP BY id ORDER BY id desc LIMIT $quantidade");
 
 		return $return = array($resultado, $res) ;
 
@@ -108,10 +37,6 @@ class Noticia{
 		$diasSemana = array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado');
 		$meses = array('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro');
 
-
-
-
-
 		foreach ($results as $result => $value) {
 			$dia = $diasSemana[date('w',strtotime($value['data']))];
 			$mes = $meses[date('n', strtotime($value['data']))-1];
@@ -120,17 +45,18 @@ class Noticia{
 			$data = str_replace("@", $mes, $data);
 			$data = str_replace("$", "de", $data);
 			$resultado[] = array('titulo'=>$value['titulo'],'conteudo'=>$value['conteudo'],'data'=>$data, 'id'=>$value['id']);
-
-
-
 		}
 
-		
 		return $resultado;
 	}
 
 
 	public function buscarTodasOrdenada($dataInicio, $dataFinal){
+		$aux = $dataInicio;
+		if ($dataInicio > $dataFinal) {
+			$dataInicio = $dataFinal;
+			$dataFinal = $aux;
+		}
 
 		$sql = new Sql();
 
@@ -142,10 +68,7 @@ class Noticia{
 
 		$diasSemana = array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado');
 		$meses = array('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro');
-
-
-
-
+		$resultado = array();
 
 		foreach ($results as $result => $value) {
 			$dia = $diasSemana[date('w',strtotime($value['data']))];
@@ -155,68 +78,36 @@ class Noticia{
 			$data = str_replace("@", $mes, $data);
 			$data = str_replace("$", "de", $data);
 			$resultado[] = array('titulo'=>$value['titulo'],'conteudo'=>$value['conteudo'],'data'=>$data, 'id'=>$value['id']);
-
 		}
 
-		
 		return $resultado;			
-
-
 	}
 
 
 
 
-	public function buscar($id){
-
+	public function buscarPeloId($id){
 		$sql = new Sql();
 		$result[0] = $sql->select("SELECT * FROM noticias WHERE id = :ID ", array(
 			':ID'=>$id
 		));
-
 
 		$result[1] = $sql->select("SELECT * FROM imagem_noticia WHERE id = :ID ", array(
 			':ID' => $id
 		));			
 
 		return $result; 
-		
-		/*$sql = new Sql();
-
-		$noticia = select("SELECT * FROM noticias WHERE id = :ID", array(
-			':ID'=> $id
-		));
-
-		$imagem = select("SELECT * FROM imagem_noticia WHERE id = :ID", array(
-			':ID'=> $id
-		));*/
-
-
 	}
 
 
-	public function getNumberImages($id){
-
+	public function getImageCount($id){
 		$sql = new Sql();
 		$num = $sql->select("SELECT * FROM imagem_noticia WHERE id=:ID", array(
 			':ID'=>$id
 		));
 
-		return($num);
-
-
+		return count($num);
 	}	
-
-
-	/*public function(){
-
-	} //transformar aspas estranha em aspas normal, antes do utf8encode
-
-
-	public function(){
-
-	} // voltar as aspas estranha depois do utf8*/
-
 }
 
 ?>

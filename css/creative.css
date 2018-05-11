@@ -363,7 +363,7 @@ header.masthead p {
 
 .sectionServicosNoticias {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   background-color: #114065;
 }
 
@@ -681,5 +681,7 @@ body{
 .notiEspecifica .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
-
- /*FIM LIGHTBOX*/
+/*FIM LIGHTBOX*/
+section#end{
+  padding: 0 !important;
+}

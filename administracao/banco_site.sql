@@ -11,11 +11,13 @@ id int auto_increment primary key,
 titulo varchar(300),
 subtitulo varchar(500),
 `data` date,
-conteudo varchar (5000)
+conteudo text -- text
 
 ) default charset utf8;
 select * from noticias order by id desc;
 alter table noticias modify conteudo varchar(4);
+
+alter table noticias modify conteudo text;
 
 desc noticias;
 
